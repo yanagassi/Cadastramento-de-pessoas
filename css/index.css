@@ -1,0 +1,75 @@
+body{
+	font-family: Arial; 	
+	text-decoration: none;
+}
+.menu{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 50px;
+	background: 	 #3385ff;
+	border-bottom: thin solid white;
+}
+#logo{
+
+	font-size: 32px;
+	color:white;
+	margin-left: 20px;
+	position: absolute;
+	top:  2px;
+	background:none;
+}
+#sair{
+	position: absolute;
+	right: 20px;
+	font-size: 20px;
+	
+	color:white;
+	border-right:  thin solid;
+	border-left:  thin solid;
+	padding: 9px;
+	background: #66a3ff
+
+}
+#voltar{
+	position: absolute;
+	right: 75px;
+	font-size: 20px;
+	border-right:  thin solid;
+	border-left:  thin solid;
+	color:white;
+
+	padding: 9px;
+	background: #66a3ff;
+}
+#sair:hover , #registro:hover, #voltar:hover{
+	text-decoration: none;
+	background:   #80b3ff
+}
+#logo:hover {
+	text-decoration: none;
+	background:   none;
+}
+input{
+	padding: 5px;
+}
+#busca{
+	width: 350px
+}
+#registro{
+	position: absolute;
+	right: 75px;
+	font-size: 20px;
+	color:white;	color:white;
+	border-right:  thin solid;
+	border-left:  thin solid;
+	padding: 9px;
+	background: #66a3ff
+}
+#resultados{
+	position: absolute;
+	top:150px;
+}
+
+#bnt_busca{ display: none; }
