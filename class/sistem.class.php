@@ -44,8 +44,8 @@
 		function envia($nome, $nome_guerra, $nascimento, $idt, $bateria, $telefone, $numero, $endereco, $bairro, $cidade, $uf, $cep, $pais, $foto)
 		{
 			preg_match("/\.(gif|bmp|png|jpg|jpeg){1}$/i", $foto["name"], $ext);
-        	$nome_imagem = md5(uniqid(time())) . "." . $ext[1];
-        	$caminho_imagem = "fotos/" . $nome_imagem;
+        		$nome_imagem = md5(uniqid(time())) . "." . $ext[1];
+        		$caminho_imagem = "fotos/" . $nome_imagem;
 
 			move_uploaded_file($foto["tmp_name"], $caminho_imagem);
 
@@ -73,31 +73,31 @@
 		{
 			$dados = new dados;
  			$Query = $this->conn->prepare("SHOW COLUMNS FROM cam_dados");
-      		$Query->execute();
-      		$n=0;
-      		$chave = trim($palavra);
-	        while($e = $Query->fetch(PDO::FETCH_ASSOC)){
-	            $colunas[] = $e['Field'];
-	        }
-	       for($i=0; $i<14; $i++)
-	       {
+      			$Query->execute();
+      			$n=0;
+      			$chave = trim($palavra);
+	       	 	while($e = $Query->fetch(PDO::FETCH_ASSOC)){
+	            		$colunas[] = $e['Field'];
+	        	}
+	       		for($i=0; $i<14; $i++)
+	       		{
 				$data= $this->conn->query("SELECT * FROM cam_dados WHERE ". $colunas[$i] ." LIKE '".$palavra."%' ORDER BY nome");
 				foreach ($data as $key) {
 					print '<a id="resultado" href="ver.php?id='. $key['id'] .'">'.$key['nome'].'</a><br>';
 					$n++;
 				}
-	       }
-	       if($n == 0 )
-	       {
-	       		echo "Nada Encontrado !!!";
-	       }else{
-	       		if($n>1){
-	       			print('<a id="resultados">'.$n . ' Resultados encontrados !</a>');
-	       		}else{
-	       			print('<a id="resultados">'.$n . ' Resultado encontrado !</a>');
 	       		}
+	       		if($n == 0 )
+	       		{
+	       			echo "Nada Encontrado !!!";
+	      		 }else{
+	       			if($n>1){
+	       				print('<a id="resultados">'.$n . ' Resultados encontrados !</a>');
+	       			}else{
+	       				print('<a id="resultados">'.$n . ' Resultado encontrado !</a>');
+	       			}
 	       		
-	       }
+	       		}
 		}
 	}
 
